@@ -19,6 +19,7 @@ def logout_view(request):
     return redirect('/')
     
     
+
     
     # for submission of the files ( to be checked)
 def index(request):
@@ -33,5 +34,6 @@ def index(request):
        else:  
           student = StudentForm()  
            return render(request,"index.html",{'form':student})  
+
 
     
