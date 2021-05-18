@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from curriculum.models import Standard
 from .models import UserProfileInfo, Contact
 from django.views.generic import CreateView
+from django.contrib.auth.forms import AuthenticationForm
 
 def user_login(request):
     if request.method == "POST":
@@ -27,7 +28,8 @@ def user_login(request):
             # return HttpResponseRedirect(reverse('register'))
 
     else:
-        return render(request, 'app_users/login.html')
+        form = AuthenticationForm()
+        return render(request, 'app_users/login.html', {'form':form})
 
 
 @login_required
