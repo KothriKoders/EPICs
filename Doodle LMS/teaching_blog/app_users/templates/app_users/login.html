@@ -6,10 +6,10 @@
 {% block image_block %}
 <header class="info-header">
   <div id="page-login" class="container-fluid d-flex align-items-center justify-content-center ">
-    <div class="row d-flex justify-content-center text-center">
-      <div class="col-md-10 text-white">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 text-white text-center">
         <!-- heading -->
-        <h2 class="display-4 font-weight-bold  p-5 " style = "color:#ccc6;" >Login </h2>
+        <h2 class="display-4 font-weight-bold pt-5 pr-5 pb-5 pl-2" >Login </h2>
         
         <!-- divider -->
         <hr style="color:#16e0bd;">
@@ -35,7 +35,6 @@
 {% block content %}
 
 <section class="text-center mt-4">
-              <h2 class="mb-5 font-weight-bold" style="color:#16e0bd;">Login To Get access</h2>
               <!-- class row for description-->
               <div class="row d-flex justify-content-center mb-4">
                 <!-- class column -->
@@ -44,27 +43,54 @@
                 </div>
               </div>
               <div class="row d-flex justify-content-center mb-4">
-                <form action="{% url 'user_login' %}" method="post">
-                  <div class="form-group">
+                
+
+                <div>
+                  <link rel="stylesheet" href="{% static '/css/login.css' %}">
+
+                    <div class="loginContainer">
+                      <div class="left">
+                        <div class="eula align-middle">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+                      </div>
+                      <div class="right">
+                        <svg viewBox="0 0 320 400" style="left: 40px !important; right: -40px !important;">
+                          <defs>
+                            <linearGradient
+                                            inkscape:collect="always"
+                                            id="linearGradient"
+                                            x1="13"
+                                            y1="193.49992"
+                                            x2="307"
+                                            y2="193.49992"
+                                            gradientUnits="userSpaceOnUse">
+                              <stop
+                                    style="stop-color:#ff00ff;"
+                                    offset="0"
+                                    id="stop876" />
+                              <stop
+                                    style="stop-color:#ff0000;"
+                                    offset="1"
+                                    id="stop878" />
+                            </linearGradient>
+                          </defs>
+                          <path d="m 0,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+                        </svg>
+                        <form class="form" action="{% url 'user_login' %}" method="POST">
+                          {% csrf_token %}
+                          <label for="{{ form.username.id_for_label }}" >Username:</label>
+                          {{ form.username }}
+                          {{ form.username.errors }}
+                          <label for="{{ form.password.id_for_label }}">Password:</label>
+                          {{ form.password }}
+                          {{ form.password.errors }}
+                          <input type="submit" id="submit" value="Login" style="font-size: 25px; padding-top: 2.2px; height: 33.2px;">
+                        </div>
+                      </div>
+                    </div>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+                  <script src="{% static '/js/login.js' %}"></script>
 
 
-                  {% csrf_token %}
-                  <div class="col-md-12">
-                    <div class="row">
-
-
-                  <label for="username">Username:</label>
-                  <input type="text" name="username" placeholder="Username" class="form-control">
-
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" class="form-control">
-                  </div>
-                  <div class="row justify-content-center">
-                      <input type="submit" value="Login" class="btn btn-success btn-lg mt-3">
-                  </div>
-                  </div>
-                  </div>
-                </form>
               </div>
 </section>
 {%endblock%}

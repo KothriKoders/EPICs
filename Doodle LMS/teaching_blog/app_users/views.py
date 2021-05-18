@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from app_users.forms import UserForm, UserProfileInfoForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout
 from django.views.generic import TemplateView
 from curriculum.models import Standard
 from .models import UserProfileInfo, Contact
@@ -11,10 +12,9 @@ from django.views.generic import CreateView
 
 def user_login(request):
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        form = AuthenticationForm(data=request.POST)
 
-        user = authenticate(username=username, password=password)
+        user = form.get_user()
 
         if user:
             if user.is_active:
@@ -27,7 +27,8 @@ def user_login(request):
             # return HttpResponseRedirect(reverse('register'))
 
     else:
-        return render(request, 'app_users/login.html')
+        form = AuthenticationForm()
+        return render(request, 'app_users/login.html', {'form':form})
 
 
 @login_required
