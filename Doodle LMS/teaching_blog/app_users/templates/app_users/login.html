@@ -50,7 +50,9 @@
 
                     <div class="loginContainer">
                       <div class="left">
-                        <div class="eula align-middle">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+                        <div class="eula align-middle">By logging in you agree to the ridiculously long terms that you didn't bother to read
+                          
+                        </div>
                       </div>
                       <div class="right">
                         <svg viewBox="0 0 320 400" style="left: 40px !important; right: -40px !important;">
@@ -83,7 +85,13 @@
                           <label for="{{ form.password.id_for_label }}">Password:</label>
                           {{ form.password }}
                           {{ form.password.errors }}
+                          
                           <input type="submit" id="submit" value="Login" style="font-size: 25px; padding-top: 2.2px; height: 33.2px;">
+                          <br>
+                          <br>
+                          {% for message in messages %}
+                          <p style="color:red">{{message}}</p>
+                          {% endfor %}
                         </div>
                       </div>
                     </div>

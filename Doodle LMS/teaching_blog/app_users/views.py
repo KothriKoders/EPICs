@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from app_users.forms import UserForm, UserProfileInfoForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -9,6 +9,7 @@ from curriculum.models import Standard
 from .models import UserProfileInfo, Contact
 from django.views.generic import CreateView
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
 
 def user_login(request):
     if request.method == "POST":
@@ -24,7 +25,9 @@ def user_login(request):
             else:
                 return HttpResponse("ACCOUNT IS DEACTIVATED")
         else:
-            return HttpResponse("Please use correct id and password")
+            messages.error(request,"Invalid id or password")
+            return redirect('user_login')
+            #return HttpResponse("Please use correct id and password")
             # return HttpResponseRedirect(reverse('register'))
 
     else:
