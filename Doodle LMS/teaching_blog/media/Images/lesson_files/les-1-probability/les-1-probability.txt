@@ -1,59 +1,21 @@
-Build an NLP-based engine that scans, converts, and organizes handwritten notes into downloadable content.
+1) There are 6 pillows in a bed, 3 are red, 2 are yellow and 1 is blue. What is the probability of picking a yellow pillow?
 
+Ans: The probability is equal to the number of yellow pillows in the bed divided by the total number of pillows, i.e. 2/6 = 1/3.
 
-Create a cloud-based platform for teachers to upload and schedule - notes, flowcharts, diagrams, videos, presentations,
- and others. Educators should be allowed to plan, organize, and display the curriculum for upcoming weeks for increased transparency.
+2) There is a container full of coloured bottles, red, blue, green and orange. Some of the bottles are picked out and displaced. Sumit did this 1000 times and got the following results:
 
+No. of blue bottles picked out: 300
+No. of red bottles: 200
+No. of green bottles: 450
+No. of orange bottles: 50
+a) What is the probability that Sumit will pick a green bottle?
 
-Identify and execute apps that allow different users, such as—students, parents, and teachers—to post questions, reply to comments, and 
-tag relevant subjects and users.
+Ans: For every 1000 bottles picked out, 450 are green.
 
+Therefore, P(green) = 450/1000 = 0.45
 
+b) If there are 100 bottles in the container, how many of them are likely to be green?
 
+Ans: The experiment implies that 450 out of 1000 bottles are green.
 
--Class
---subject 
----daily schedule along with schedule for next week 
----- notes, video, animation, ppt etc (study material)
------ doubts (by students)
-------comments, tag (by anyone )
-
-USERS: teachers, student, parents 
-
-MODELS: class, subject, standard, lesson
-	
-required apps: courses and users 
-
-class models: 
-- courses: class, subject, curriculum
-- users: teacher, student, parent 
-
-
-users model: 
-- name 
-- bio
-- profile pic
-- user_type 
-
-class model: 
-- name of class (10, 11 etc.) (id)
-- subjects (foreign key)
-
-subject model: 					
-- name of subject (id)			
-- class (foreign key)			
-- curriculam (foriegn key)		
-
-lesson model: 
-- curriculam id (id)
-- class (foreign key)
-- subject (foreign key)
-- teacher(created_by) (foreign key)
-- 
-
-
-
--Create users
---authenticate them to see different things in web app
-
-
+Therefore, out of 100 bottles, 45 are green.
