@@ -79,6 +79,7 @@ Learning Management system as a part of community project submission
 * Design and  implementation of comment system
 
 
-
+# Detailed Report 👉 
+[Report](https://docs.google.com/document/d/1lojvlDQjhBQggNwRWioVCQbsARdZNssUUfYcfqNRw84/edit?usp=sharing)
 
 
