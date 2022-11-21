@@ -1,5 +1,27 @@
 # EPICs
 Learning Management system as a part of community project submission
+# Below is a screenshot of the student dashboard -
+
+![Student Dashboard](https://user-images.githubusercontent.com/54028832/202979542-af807c33-85a8-4f3f-bc11-d1c729bad0c1.png)
+![image](https://user-images.githubusercontent.com/54028832/202979728-06df5a3b-f7d5-46e1-bf77-9a436c30a28e.png)
+![image](https://user-images.githubusercontent.com/54028832/202979853-1ed0f874-2538-41ad-84b1-a9494bcf7531.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Team Members and Contribution
